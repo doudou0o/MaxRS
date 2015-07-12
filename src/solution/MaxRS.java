@@ -4,10 +4,22 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import struct.intervalTree;
+import struct.line;
 
 public class MaxRS {
-
-	public static void main(String[] args) {
+	
+	private void doMaxRS(){
+		ArrayList<Double> X = getX();
+		Collections.sort(X);
+		intervalTree a = new intervalTree();
+		a.setX(X);
+		a.build(0, X.size()-1);
+		System.out.println("aa");
+		
+		ArrayList<line> lines = getlines();
+		Collections.sort(lines);
+	}
+	private ArrayList<Double> getX() {
 		ArrayList<Double> X= new ArrayList<Double>();
 		X.add(1.2);
 		X.add(2.3);
@@ -19,11 +31,27 @@ public class MaxRS {
 		X.add(8.2);
 		X.add(9.4);
 		X.add(9.9);
-		Collections.sort(X);
-		intervalTree a = new intervalTree();
-		a.setX(X);
-		a.build(0, X.size()-1);
-		System.out.println("aa");
+		return X;
 	}
+	private ArrayList<line> getlines() {
+		ArrayList<line> lines = new ArrayList<>();
+		line aLine = new line(2.7,5.7,1); aLine.setFlag(true);
+		lines.add(aLine);
+		aLine = new line(2.7,5.7,2); aLine.setFlag(true);
+		lines.add(aLine);
+		aLine = new line(2.7,5.7,4); aLine.setFlag(false);
+		lines.add(aLine);
+		aLine = new line(4.7,7.7,1); aLine.setFlag(true);
+		lines.add(aLine);
+		aLine = new line(4.7,7.7,3); aLine.setFlag(false);
+		lines.add(aLine);
 
+		return lines;
+}
+	
+	public static void main(String[] args) {
+		MaxRS maxrs = new MaxRS();
+		maxrs.doMaxRS();
+		
+	}
 }
