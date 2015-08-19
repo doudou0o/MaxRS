@@ -22,6 +22,7 @@ public class intervalTree {
 			System.err.println("X is not init first");
 			return;
 		}
+		if (lft==rht) return;
 		tree[ind].init(lft,rht);
 		if (lft+1!=rht && lft!=rht) {
 			int mid = tree[ind].mid();
