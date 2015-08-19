@@ -12,7 +12,7 @@ public class node {
 		this.rht = rht;
 		this.w_lft = (lft+rht)>>1;
 		this.w_rht = w_lft+1;
-		if((rht - lft)<=2)
+		if((rht - lft)<2)
 			flag=false;
 		else
 			flag=true;
