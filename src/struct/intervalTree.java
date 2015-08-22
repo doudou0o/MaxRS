@@ -30,4 +30,8 @@ public class intervalTree {
 			build(mid+1, rht, ind<<1|1);
 		}
 	}
+	
+	public void insertLine(line line) {
+		
+	}
 }
