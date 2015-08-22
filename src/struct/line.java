@@ -2,8 +2,8 @@ package struct;
 
 public class line implements Comparable<line>{
 		double high;
-		int linex;
-		int liney;
+		int linex,liney;
+		double value=1;
 		boolean isButtom;
 		public line() {
 		}
@@ -24,5 +24,8 @@ public class line implements Comparable<line>{
 				return -1;
 			else 
 				return 0;
+		}
+		public void setValue(double value) {
+			this.value = value;
 		}
 }

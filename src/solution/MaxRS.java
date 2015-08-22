@@ -20,6 +20,10 @@ public class MaxRS {
 		ArrayList<line> lines = getlines();
 		Collections.sort(lines);
 		System.out.println("sort lines finish");
+		
+		a.insertLine(lines.get(0));
+		a.insertLine(lines.get(1));
+		System.out.println("insert lines finish");
 	}
 	private ArrayList<Double> getX() {
 		ArrayList<Double> X= new ArrayList<Double>();

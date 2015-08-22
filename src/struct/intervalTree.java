@@ -32,6 +32,26 @@ public class intervalTree {
 	}
 	
 	public void insertLine(line line) {
-		
+		openNode(IND,line);
+	}
+	private void openNode(int index, line line) {
+		if ( !isValid(index) )
+			return;
+		if ( line.linex < tree[index].w_lft )
+			openNode(index<<1, line);
+		if ( line.liney > tree[index].w_rht )
+			openNode((index<<1)+1, line);
+		if ( line.linex <= tree[index].w_lft && line.liney >= tree[index].w_rht )
+			if ( line.isButtom )
+				tree[index].add_value(line.value);
+			else
+				tree[index].sub_value(line.value);
+	}
+	private boolean isValid(int index) {
+		if ( index >= tree.length )
+			return false;
+		if ( tree[index].lft == 0 && tree[index].rht == 0 )
+			return false;
+		return true;
 	}
 }
