@@ -2,12 +2,12 @@ package struct;
 
 public class line implements Comparable<line>{
 		double high;
-		double linex;
-		double liney;
+		int linex;
+		int liney;
 		boolean isButtom;
 		public line() {
 		}
-		public line(double x, double y,double h) {
+		public line(int x, int y,double h) {
 			linex = x;
 			liney = y;
 			high = h;
