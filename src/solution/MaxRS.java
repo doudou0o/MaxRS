@@ -6,6 +6,7 @@ import java.util.HashMap;
 
 import struct.intervalTree;
 import struct.line;
+import struct.maxsaver;
 
 public class MaxRS {
 	
@@ -21,10 +22,19 @@ public class MaxRS {
 		Collections.sort(lines);
 		System.out.println("sort lines finish");
 		
+		maxsaver saver = new maxsaver();
+		saver.setMAXSIZE(20);
+		saver.setInterval(a.getMiddleTravel());
+		
+		
 		a.insertLine(lines.get(0));//[1,4]1
+		saver.update(a.getrootMaxlist(), a.getrootMax(),lines.get(0).getHigh());
 		a.insertLine(lines.get(1));//[3,6]1
+		saver.update(a.getrootMaxlist(), a.getrootMax(),lines.get(1).getHigh());
 		a.insertLine(lines.get(2));//[1,4]-1
+		saver.update(a.getrootMaxlist(), a.getrootMax(),lines.get(2).getHigh());
 		a.insertLine(lines.get(3));//[3,6]1
+		saver.update(a.getrootMaxlist(), a.getrootMax(),lines.get(3).getHigh());
 		
 		System.out.println("insert lines finish");
 	}

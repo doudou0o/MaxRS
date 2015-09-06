@@ -28,4 +28,7 @@ public class line implements Comparable<line>{
 		public void setValue(double value) {
 			this.value = value;
 		}
+		public double getHigh(){
+			return high;
+		}
 }

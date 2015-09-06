@@ -1,6 +1,7 @@
 package struct;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class intervalTree {
 	private final int N = 50;
@@ -86,5 +87,22 @@ public class intervalTree {
 		if ( tree[index].lft == 0 && tree[index].rht == 0 )
 			return false;
 		return true;
+	}
+	public ArrayList<Integer> getMiddleTravel(){
+		ArrayList<Integer> T = new ArrayList<Integer>();
+		getMiddleTravel(IND,T);
+		return T;
+	}
+	public void getMiddleTravel(int index, ArrayList<Integer> T){
+		if ( !isValid(index) )return;
+		getMiddleTravel(index<<1, T);
+		T.add(index);
+		getMiddleTravel((index<<1)+1, T);
+	}
+	public double getrootMax(){
+		return tree[IND].subMaxValue;
+	}
+	public HashSet<Integer> getrootMaxlist(){
+		return tree[IND].subMaxList;
 	}
 }
