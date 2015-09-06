@@ -25,4 +25,6 @@ maxsaver.java
 
 
 next work
-  node 中 subMaxList 怎么初始化
+  测试 maxsaver
+  测试 backwards pass
+  构造一个比较特殊有效的测试例子
