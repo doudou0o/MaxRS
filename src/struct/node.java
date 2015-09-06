@@ -1,10 +1,15 @@
 package struct;
 
+import java.util.HashSet;
+
 public class node {
 	int lft,rht;
 	int w_lft,w_rht;
 	boolean flag;
 	double value;
+	
+	HashSet<Integer> subMaxList;
+	double subMaxValue;
 	node(){
 	}
 	void init(int lft,int rht){
@@ -17,6 +22,8 @@ public class node {
 		else
 			flag=true;
 		value = 0;
+		subMaxValue=0;
+		subMaxList = new HashSet<Integer>();
 	}
 	public int mid() {
 		return lft+((rht-lft)>>1);

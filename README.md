@@ -9,7 +9,7 @@ intervalTree.java
       其中包括每个节点最大子节点列表更新
 
 node.java
-  如上图，主要有左右窗口，和最大子节点列表
+  如上图，主要有左右窗口，和最大子节点列表subMaxList
   value指当前节点权值
   flag指是否是叶子节点（暂时没有用到）
   
@@ -24,4 +24,5 @@ maxsaver.java
 
 
 
-  
+next work
+  node 中 subMaxList 怎么初始化

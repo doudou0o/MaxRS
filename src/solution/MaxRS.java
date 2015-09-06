@@ -21,8 +21,11 @@ public class MaxRS {
 		Collections.sort(lines);
 		System.out.println("sort lines finish");
 		
-		a.insertLine(lines.get(0));
-		a.insertLine(lines.get(1));
+		a.insertLine(lines.get(0));//[1,4]1
+		a.insertLine(lines.get(1));//[3,6]1
+		a.insertLine(lines.get(2));//[1,4]-1
+		a.insertLine(lines.get(3));//[3,6]1
+		
 		System.out.println("insert lines finish");
 	}
 	private ArrayList<Double> getX() {
